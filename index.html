@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정범수 | 경희대 토목공학과 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            600: '#0284c7', // Sky Blue 계열 (스마트 토목 이미지)
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e', // 신뢰감을 주는 딥 블루
+                        },
+                        neutral: {
+                            850: '#202530',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'Inter', 'sans-serif'],
+                    }
+                }
+            },
+            darkMode: 'class'
+        }
+    </script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body {
+            font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <nav class="fixed top-0 left-0 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 z-50 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i data-lucide="hard-hat" class="w-6 h-6 text-brand-600"></i>
+                    <span class="font-bold text-lg tracking-wide bg-gradient-to-r from-brand-700 to-teal-600 bg-clip-text text-transparent dark:from-brand-500 dark:to-teal-400">
+                        정범수 토목 포트폴리오
+                    </span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium hover:text-brand-600 transition">소개</a>
+                    <a href="#skills" class="text-sm font-medium hover:text-brand-600 transition">기술 역량</a>
+                    <a href="#projects" class="text-sm font-medium hover:text-brand-600 transition">연구 및 설계</a>
+                    <a href="#experience" class="text-sm font-medium hover:text-brand-600 transition">커리어 타임라인</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-brand-600 transition">연락처</a>
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i id="theme-icon" data-lucide="moon" class="w-4 h-4"></i>
+                    </button>
+                </div>
+
+                <div class="flex items-center md:hidden gap-2">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i id="theme-icon-mobile" data-lucide="moon" class="w-4 h-4"></i>
+                    </button>
+                    <button id="menu-btn" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4 space-y-2">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">소개</a>
+            <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">기술 역량</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">연구 및 설계</a>
+            <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">커리어 타임라인</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">연락처</a>
+        </div>
+    </nav>
+
+    <section id="about" class="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-b from-brand-50 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+                
+                <div class="md:col-span-7 space-y-6">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-brand-100 text-brand-700 dark:bg-brand-900/40 dark:text-brand-300">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                        경희대 토목공학과 학부연구생 정범수 포트폴리오
+                    </span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                        학술 성과와 글로벌 시각을 겸비한<br class="hidden sm:inline">
+                        준비된 인재, <span class="bg-gradient-to-r from-brand-600 to-teal-500 bg-clip-text text-transparent">정범수</span>입니다.
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <strong>경희대학교 토목공학과</strong> 학부연구생으로 콘크리트 포장공학의 학술 연구를 깊이 수행했습니다. 다수의 포장 분석 연구 논문을 게재하고 국제학술대회 우수논문상을 수상하였으며, 스마트건설안전 300시간 교육 및 아시아 청년 포럼을 통해 공정관리와 글로벌 해외사업을 이끌어갈 역량을 연마하고 있습니다.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1 text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm">#경희대 토목과 학부연구생</span>
+                        <span class="px-3 py-1 text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm">#콘크리트 포장 연구 1저자</span>
+                        <span class="px-3 py-1 text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm">#ICRE 국제학술대회 우수논문상</span>
+                        <span class="px-3 py-1 text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg shadow-sm">#스마트건설안전 300h</span>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="#contact" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-medium shadow-lg shadow-brand-600/20 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i data-lucide="mail" class="w-4 h-4"></i> 연락처 보기
+                        </a>
+                        <a href="https://padlet.com/2021103816/padlet-ly2cpwgzvmbh2t1v" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-xl bg-gradient-to-r from-teal-600 to-brand-600 text-white hover:opacity-90 font-semibold shadow-lg shadow-teal-500/15 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                            <i data-lucide="external-link" class="w-4 h-4"></i> Padlet 포트폴리오 열기
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:col-span-5 flex justify-center">
+                    <div class="relative w-72 h-72 sm:w-80 sm:h-80 md:w-full md:h-96 max-w-sm rounded-3xl bg-gradient-to-tr from-brand-600 to-teal-500 p-1 shadow-2xl">
+                        <div class="w-full h-full bg-slate-100 dark:bg-slate-850 rounded-[22px] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
+                            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-width="1"/>
+                                        </pattern>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#grid)" />
+                                </svg>
+                            </div>
+                            <div class="w-24 h-24 rounded-full bg-brand-50 dark:bg-brand-900/30 flex items-center justify-center mb-6 border-4 border-white dark:border-slate-700 shadow-md relative">
+                                <i data-lucide="heart-handshake" class="w-6 h-6 absolute -top-1 -right-1 text-teal-500 bg-white dark:bg-slate-800 rounded-full p-1 shadow-sm border border-slate-200" title="군 또래상담병 출신"></i>
+                                <i data-lucide="trophy" class="w-12 h-12 text-brand-600 dark:text-brand-400"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">정범수</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">경희대학교 토목공학과 4학년</p>
+                            <p class="text-xs text-brand-600 dark:text-brand-400 font-semibold mt-3 bg-brand-50 dark:bg-brand-900/20 px-3 py-1 rounded-full">
+                                도로포장 및 해외 스마트건설 공정관리 타겟
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-white dark:bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold tracking-tight">기술 역량 & 학술 역량</h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-2">
+                    포장 해석, 구조 설계 및 글로벌 사업 관리를 위한 핵심 기술 역량입니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-lg bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400">
+                            <i data-lucide="cpu" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">FEA & 설계 역량</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-1.5">
+                                <span>유한요소해석 (가설 구조 유한요소해석 역량)</span>
+                                <span class="text-brand-600">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-1.5">
+                                <span>AutoCAD (도로 포장 및 암거 구조 설계)</span>
+                                <span class="text-brand-600">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-1.5">
+                                <span>철근콘크리트공학 & 구조역학 해석</span>
+                                <span class="text-brand-600">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-lg bg-teal-100 dark:bg-teal-900/40 text-teal-600 dark:text-teal-400">
+                            <i data-lucide="globe" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">PM & 글로벌 네트워크</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-1.5">
+                                <span>스마트 건설안전 공정관리 교육이수</span>
+                                <span class="text-teal-600">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full">
+                                <div class="bg-teal-500 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-1.5">
+                                <span>싱가포르 청년 포럼 및 영문 연구 발표</span>
+                                <span class="text-teal-600">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full">
+                                <div class="bg-teal-500 h-2.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm font-semibold mb-1.5">
+                                <span>구조 설계 디자인 및 최적 단면 산출</span>
+                                <span class="text-teal-600">85%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-slate-700 h-2.5 rounded-full">
+                                <div class="bg-teal-500 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 dark:bg-slate-900 p-6 rounded-2xl border border-slate-100 dark:border-slate-800 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2.5 rounded-lg bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400">
+                            <i data-lucide="award" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold">Key Honors & Credits</h3>
+                    </div>
+                    
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 bg-amber-100 dark:bg-amber-900/30 p-1 rounded">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Best Paper Award (우수논문상)</h4>
+                                <p class="text-xs text-slate-500">2025 도로기술자 국제학술대회 (ICRE)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 bg-amber-100 dark:bg-amber-900/30 p-1 rounded">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">일본 나고야 사례 학술논문 3편</h4>
+                                <p class="text-xs text-slate-500">도심부 도로 콘크리트 포장 분석 (1저자 외 2편)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="mt-1 bg-amber-100 dark:bg-amber-900/30 p-1 rounded">
+                                <i data-lucide="check" class="w-3.5 h-3.5 text-amber-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">교량 모형 경진대회 3위 입상</h4>
+                                <p class="text-xs text-slate-500">구조 성능 최적화 교량 모델 설계 (2023.12.01)</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-slate-50 dark:bg-slate-900">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight">수행 연구 및 설계 프로젝트</h2>
+                    <p class="text-slate-500 dark:text-slate-400 mt-2">
+                        경희대 학부연구생 시절 축적한 논문 성과와 핵심 암거 설계 프로젝트 상세 내역입니다.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mb-12 bg-gradient-to-r from-teal-500/10 via-brand-600/10 to-transparent border border-teal-200/50 dark:border-slate-800 p-6 rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="p-3.5 bg-gradient-to-tr from-teal-500 to-brand-600 rounded-2xl text-white shadow-md">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold">정범수의 스마트 건설 & 도로공학 Padlet 쇼케이스</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">연구 발표 자료, 실험 사진, 모형 제작 과정 등 종합 시각 자료를 패들릿 보드에서 더 풍부하게 확인하실 수 있습니다.</p>
+                    </div>
+                </div>
+                <a href="https://padlet.com/2021103816/padlet-ly2cpwgzvmbh2t1v" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 px-5 py-2.5 bg-white dark:bg-slate-800 text-brand-700 dark:text-brand-300 border border-slate-200 dark:border-slate-700 font-bold rounded-xl text-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition flex items-center gap-2 shadow-sm">
+                    패들릿 보드 방문하기 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="bg-white dark:bg-slate-850 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-gradient-to-r from-sky-500 to-blue-600 flex items-center justify-center p-6 text-white text-center">
+                        <div>
+                            <i data-lucide="trophy" class="w-12 h-12 mx-auto mb-2 opacity-90"></i>
+                            <span class="text-xs uppercase tracking-wider font-semibold opacity-75">도로교통 & FEA 연구</span>
+                            <h4 class="font-bold text-sm mt-1">국제학술대회 ICRE 우수논문상</h4>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2 py-1 bg-amber-50 text-amber-700 dark:bg-amber-950/40 dark:text-amber-400 rounded-md">Best Paper Award</span>
+                            <span class="text-xs text-slate-400">2025.09.25</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">콘크리트 포장 양생 중 즉시 교통 개방을 위한 가설 구조 시스템의 유한요소해석</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-3">
+                            한국도로학회(KSRE) 주관 '2025 도로기술자 국제학술대회(ICRE)'에서 발표된 논문입니다. 신속한 시공 및 양생 중 차량 통행 개방을 위한 가설 구조의 최적 단면과 거동을 분석해 우수논문상을 수상했습니다.
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                            <span class="text-xs font-semibold text-slate-400">연구 주저자 (1저자)</span>
+                            <button onclick="openModal('project-1')" class="text-xs font-semibold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+                                상세보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-850 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-gradient-to-r from-teal-500 to-emerald-600 flex items-center justify-center p-6 text-white text-center">
+                        <div>
+                            <i data-lucide="trending-up" class="w-12 h-12 mx-auto mb-2 opacity-90"></i>
+                            <span class="text-xs uppercase tracking-wider font-semibold opacity-75">해외 선진 사례 연구</span>
+                            <h4 class="font-bold text-sm mt-1">나고야 콘크리트 포장 논문 3편</h4>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2 py-1 bg-teal-50 text-teal-600 dark:bg-teal-950 dark:text-teal-400 rounded-md">2026 봄학술대회 (구두발표)</span>
+                            <span class="text-xs text-slate-400">2026.04</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">도심부 도로, 버스정류장 및 교차로 콘크리트 포장 공용성 분석</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-3">
+                            일본 나고야시의 실제 도로 인프라 데이터를 확보하여 콘크리트 포장의 상태와 특성, 공용성을 상세 분석한 시리즈 연구입니다. 1저자 및 2저자로 총 3편의 학술지 및 학회 논문을 발표했습니다.
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                            <span class="text-xs font-semibold text-slate-400">1저자 1편 / 공동 2저자 2편</span>
+                            <button onclick="openModal('project-2')" class="text-xs font-semibold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+                                상세보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-slate-850 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition duration-300 flex flex-col h-full">
+                    <div class="h-48 bg-gradient-to-r from-purple-500 to-indigo-600 flex items-center justify-center p-6 text-white text-center">
+                        <div>
+                            <i data-lucide="drafting-compass" class="w-12 h-12 mx-auto mb-2 opacity-90"></i>
+                            <span class="text-xs uppercase tracking-wider font-semibold opacity-75">철콘 & 구조역학 융합 설계</span>
+                            <h4 class="font-bold text-sm mt-1">1회 및 2회 전산 암거 설계</h4>
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-semibold px-2 py-1 bg-purple-50 text-purple-600 dark:bg-purple-950 dark:text-purple-400 rounded-md">디자인 수업 연계 프로젝트</span>
+                            <span class="text-xs text-slate-400">학부 우수 설계작</span>
+                        </div>
+                        <h3 class="text-lg font-bold mb-2">지중 박스암거(Box Culvert) 구조 설계 및 최적 단면 분석</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-4 line-clamp-3">
+                            전공 디자인 수업을 통해 철근콘크리트공학과 구조역학에서 동시에 중요하게 다루어진 암거 설계를 완벽히 수행했습니다. 토압, 활하중, 전단 응력 및 휨 균열 제어 기준을 엄격히 분석하여 실무 배근 설계를 완성했습니다.
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                            <span class="text-xs font-semibold text-slate-400">구조 안전성 검토 및 철근 배근 설계</span>
+                            <button onclick="openModal('project-3')" class="text-xs font-semibold text-brand-600 hover:text-brand-700 flex items-center gap-1">
+                                상세보기 <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-white dark:bg-slate-950">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight">정범수 성장 타임라인</h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-2">
+                    경희대학교 입학부터 현재까지 성실하게 쌓아온 성과들을 투명하게 기록한 타임라인입니다.
+                </p>
+            </div>
+
+            <div class="relative border-l border-slate-200 dark:border-slate-800 pl-6 ml-4 space-y-12">
+                
+                <div class="relative">
+                    <div class="absolute -left-[35px] top-1.5 w-4 h-4 rounded-full bg-brand-600 border-4 border-white dark:border-slate-950 animate-pulse"></div>
+                    <div class="space-y-2">
+                        <span class="text-xs font-semibold text-brand-600 dark:text-brand-400">2026년 (4학년 재학중)</span>
+                        <h3 class="text-lg font-bold">학술 연구 성과 다각화 및 실무 중심 글로벌 훈련</h3>
+                        <div class="text-sm text-slate-600 dark:text-slate-400 space-y-3">
+                            <div class="p-4 bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl space-y-2">
+                                <p class="font-semibold text-slate-800 dark:text-slate-200">📝 나고야 콘크리트 포장 연구 논문 3편 완료</p>
+                                <ul class="list-disc pl-5 space-y-1 text-xs text-slate-600 dark:text-slate-400">
+                                    <li><strong>"도심부 도로 콘크리트 포장 현황 및 공용성 분석 - 일본 나고야 사례 연구" (1저자)</strong><br><span class="text-teal-600 font-semibold">→ 2026 봄학술대회 구두발표 등록 완료</span></li>
+                                    <li>"버스정류장 콘크리트 포장 적용 현황 및 공용성 분석 – 일본 나고야 사례 연구" (2저자)</li>
+                                    <li>"도심지 교차로 콘크리트 포장 적용 특성 및 상태 분석 - 일본 나고야 사례 연구" (2저자)</li>
+                                </ul>
+                            </div>
+                            <p><strong>🇸🇬 아시아 청년 포럼 (싱가포르) 참가:</strong> 한국 대표 청년 엔지니어로서 지속 가능한 글로벌 스마트시티 시공 가이드라인 토의 및 아시아 인프라 협력 네트워크 구축.</p>
+                            <p><strong>🏗️ 스마트건설안전 300시간 전문 교육 과정 이수:</strong> 공정관리(Scheduling/PM) 및 글로벌 해외건설 사업 역량을 입체적으로 훈련하고 있습니다.</p>
+                            <p><strong>📐 전공 암거 설계 프로젝트:</strong> 철근콘크리트공학 및 구조역학 융합 지중 암거 구조 및 철근 배근 안전 설계.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[35px] top-1.5 w-4 h-4 rounded-full bg-teal-500 border-4 border-white dark:border-slate-950"></div>
+                    <div class="space-y-2">
+                        <span class="text-xs font-semibold text-teal-500">2025년 (3학년)</span>
+                        <h3 class="text-lg font-bold">국제학술대회 우수논문상 및 축구동아리 시빌(CIVIL) 운영진</h3>
+                        <div class="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                            <div class="p-4 bg-amber-50/50 dark:bg-slate-900/40 border border-amber-100/50 dark:border-slate-800 rounded-xl">
+                                <p class="font-bold text-slate-800 dark:text-slate-200">🏆 2025 도로기술자 국제학술대회 (ICRE) 우수논문상 (2025.09.25)</p>
+                                <p class="text-xs mt-1">학회 주관: 한국도로학회 (KSRE - Korean Society of Road Engineers)</p>
+                                <p class="text-xs font-semibold text-brand-700 dark:text-brand-300">발표 논문: "콘크리트 포장 양생 중 즉시 교통 개방을 위한 가설 구조 시스템의 유한요소해석" (1저자)</p>
+                            </div>
+                            <p><strong>⚽ 토목공학과 전통 축구동아리 '시빌(CIVIL)' 운영진:</strong> 단순한 학업에 그치지 않고, 팀 스포츠 활동에서 팀원들의 안전과 전술, 단합을 이끄는 운영진 역할을 통해 돈독한 협력과 소통 역량을 키웠습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute -left-[35px] top-1.5 w-4 h-4 rounded-full bg-purple-500 border-4 border-white dark:border-slate-950"></div>
+                    <div class="space-y-2">
+                        <span class="text-xs font-semibold text-purple-500">2024년 (2학년)</span>
+                        <h3 class="text-lg font-bold">정식 학부연구생 진입 & 연구 시뮬레이션 업무 수행</h3>
+                        <div class="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                            <p><strong>🔬 2학년 2학기 정식 학부연구생 선발:</strong> 경희대 도로공학 연구실에 선발되어 주도적으로 도로 시멘트/콘크리트 포장 관련 전공 세미나 및 가상 시뮬레이션 업무 수행.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+            <div class="max-w-2xl mx-auto space-y-3">
+                <h2 class="text-3xl font-bold tracking-tight">함께 글로벌 인프라의 미래를 설계하겠습니다</h2>
+                <p class="text-slate-500 dark:text-slate-400">
+                    학술 연구 성과와 끈기 있는 열정으로 기업의 미래 가치에 기여하겠습니다. 언제든 연락해 주세요!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+                <a href="mailto:koebeomsoo@naver.com" class="p-5 bg-white dark:bg-slate-850 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4 hover:border-brand-500 transition group text-left">
+                    <div class="p-3 bg-brand-50 dark:bg-brand-900/30 text-brand-600 rounded-xl group-hover:scale-110 transition">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-medium text-slate-400">이메일 주소</p>
+                        <p class="text-sm font-bold text-slate-700 dark:text-slate-200 mt-0.5">koebeomsoo@naver.com</p>
+                    </div>
+                </a>
+                <a href="tel:01068227815" class="p-5 bg-white dark:bg-slate-850 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex items-center gap-4 hover:border-teal-500 transition group text-left">
+                    <div class="p-3 bg-teal-50 dark:bg-teal-900/30 text-teal-600 rounded-xl group-hover:scale-110 transition">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs font-medium text-slate-400">전화번호</p>
+                        <p class="text-sm font-bold text-slate-700 dark:text-slate-200 mt-0.5">010-6822-7815</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-white dark:bg-slate-950 text-center border-t border-slate-200 dark:border-slate-800 text-xs text-slate-400">
+        <p>© 2026 Jeong Beomsoo. All Rights Reserved. 본 사이트는 Tailwind CSS로 제작되었습니다.</p>
+    </footer>
+
+    <div id="modal-container" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-850 rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 relative shadow-2xl border border-slate-200 dark:border-slate-800">
+            <button onclick="closeModal()" class="absolute top-4 right-4 p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-400 hover:text-slate-600">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="modal-content" class="space-y-4 pt-2">
+                </div>
+        </div>
+    </div>
+
+    <script>
+        // 아이콘 생성기 가동
+        lucide.createIcons();
+
+        // 1. 모바일 메뉴 토글 로직
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 링크 클릭 시 모바일 메뉴 자동 닫힘
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // 2. 다크모드/라이트모드 토글 시스템 로직
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeIconMobile = document.getElementById('theme-icon-mobile');
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                updateThemeIcons(false);
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateThemeIcons(true);
+            }
+        }
+
+        function updateThemeIcons(isDark) {
+            const iconName = isDark ? 'sun' : 'moon';
+            themeIcon.setAttribute('data-lucide', iconName);
+            themeIconMobile.setAttribute('data-lucide', iconName);
+            lucide.createIcons();
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+
+        // 초기 시스템 테마 검사 설정
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            updateThemeIcons(true);
+        } else {
+            document.documentElement.classList.remove('dark');
+            updateThemeIcons(false);
+        }
+
+        // 3. 프로젝트 상세설명 보기 데이터 가공 및 모달 제어 함수
+        const projectData = {
+            'project-1': `
+                <div class="p-3 bg-blue-100 dark:bg-blue-900/30 text-blue-600 rounded-2xl w-fit"><i data-lucide="trophy" class="w-8 h-8"></i></div>
+                <h3 class="text-xl font-bold mt-2">콘크리트 포장 가설 구조 시스템 유한요소해석</h3>
+                <p class="text-xs font-semibold text-slate-400">발표기관: 한국도로학회(KSRE) 2025 도로기술자 국제학술대회(ICRE)</p>
+                <div class="text-sm space-y-2 mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p><strong>📌 연구 성과 개요:</strong> 도로 리모델링 및 급속 시공 시 콘크리트 슬래브가 굳는(양생) 시간 동안 차량 통행을 지연시키지 않고 통과시킬 수 있는 특수 가설 플레이트 시스템을 설계했습니다.</p>
+                    <p><strong>💻 담당 역할 (1저자):</strong> 유한요소해석(FEA) 소프트웨어를 활용하여 차량 활하중(DB-24 하중 기준) 하에서 가설 시스템의 전단력, 휨모멘트 및 처짐 성능을 정량적으로 해석하고 단면의 안전성을 구조공학적으로 입증해 우수논문상을 받았습니다.</p>
+                </div>
+            `,
+            'project-2': `
+                <div class="p-3 bg-teal-100 dark:bg-teal-900/30 text-teal-600 rounded-2xl w-fit"><i data-lucide="trending-up" class="w-8 h-8"></i></div>
+                <h3 class="text-xl font-bold mt-2">일본 나고야 도심 콘크리트 포장 구조 공용성 시리즈 연구</h3>
+                <p class="text-xs font-semibold text-slate-400">연구 이력: 2026년도 대한토목학회/도로학회 봄학술대회 구두 발표 논문 포함 총 3편</p>
+                <div class="text-sm space-y-2 mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p><strong>📌 연구 내용:</strong> 선진 아스팔트/콘크리트 유지보수 사례 분석을 위해 일본 나고야 도심지 내부 도로망 인프라 실측 데이터를 확보 및 공용성을 추적한 고도화 연구입니다.</p>
+                    <p><strong>📈 구성 논문 내역:</strong><br>
+                    1. 도심부 일반 도로 콘크리트 포장 적용 현황 분석 (정범수 1저자)<br>
+                    2. 도심 버스정류장 특수 하중 조건 구간 콘크리트 공용성 분석 (공동 2저자)<br>
+                    3. 대형 교차로 소성변형 억제 콘크리트 상태 추적 분석 (공동 2저자)</p>
+                </div>
+            `,
+            'project-3': `
+                <div class="p-3 bg-purple-100 dark:bg-purple-900/30 text-purple-600 rounded-2xl w-fit"><i data-lucide="drafting-compass" class="w-8 h-8"></i></div>
+                <h3 class="text-xl font-bold mt-2">지중 박스암거(Box Culvert) 전산 구조 실무 배근 설계</h3>
+                <p class="text-xs font-semibold text-slate-400">구분: 철근콘크리트 디자인 및 구조역학 연계 전공 프로젝트</p>
+                <div class="text-sm space-y-2 mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+                    <p><strong>📌 프로젝트 설명:</strong> 지하에 매설되는 박스 암거에 작용하는 상부 토압, 측면 주동토압, 지하수압 및 차량 연행 하중을 역학적으로 계산하여 외력에 저항하는 구조물을 디자인했습니다.</p>
+                    <p><strong>📐 상세 수행:</strong> 모멘트 분배법 및 전산 해석을 가동해 부재별 최대 계수 모멘트를 산출하고, 균열 제어 및 연성 파괴 기준을 고려해 주철근과 배력철근의 배근 간격 및 직경을 산출한 종합 실무 도면 설계서입니다.</p>
+                </div>
+            `
+        };
+
+        const modalContainer = document.getElementById('modal-container');
+        const modalContent = document.getElementById('modal-content');
+
+        function openModal(id) {
+            modalContent.innerHTML = projectData[id] || '';
+            modalContainer.classList.remove('hidden');
+            modalContainer.classList.add('flex');
+            lucide.createIcons(); // 모달 내부 아이콘 활성화
+        }
+
+        function closeModal() {
+            modalContainer.classList.add('hidden');
+            modalContainer.classList.remove('flex');
+        }
+
+        // 모달 바깥 어두운 배경 클릭 시 닫기
+        modalContainer.addEventListener('click', (e) => {
+            if (e.target === modalContainer) closeModal();
+        });
+    </script>
+</body>
+</html>
